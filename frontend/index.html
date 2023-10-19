@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>M Site</title>
+	<link rel="stylesheet"
+		href="https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css" />
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+	<section class="to-do">
+		<div class="wrap">
+			<h1>Todo list</h1>
+
+			<form class="todoask" action="#">
+				<input type="text" name="todo" id="todo" />
+				<button>Add</button>
+			</form>
+		</div>
+
+	</section>
+	<section class="todos">
+		<center>
+			<hr />
+		</center>
+		<div class="wrap">
+			<div class="box">
+				
+			</div>
+		</div>
+	</section>
+
+	<div class="modal">
+      <div class="wrapper-modal">
+        <h1>Форма изменения цели</h1>
+
+        <div class="preview">
+          <div class="box">
+            <div class="item">
+              <div class="wrapper">
+                <div class="info">
+                  <span class="title"></span>
+                  <span class="time"></span>
+                </div>
+
+                <button class="del">
+                  <img src="img/cls.svg" alt="cls" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="modal-form">
+          <input
+            type="text"
+            id="modal-change"
+            name="modal-change"
+            placeholder="На что хотите изменить?"
+          />
+          <button>Подтвердить</button>
+        </form>
+      </div>
+    </div>
+	<script src="scripts/script.js"></script>
+</body>
+
+</html>

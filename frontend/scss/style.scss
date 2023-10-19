@@ -1,0 +1,376 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    transition: all .5s ease;
+}
+
+.wrap {
+    width: 70%;
+    margin: 0 auto
+}
+
+img {
+    max-width: 100%
+}
+
+
+
+
+.to-do {
+    margin-top: 40px;
+
+    .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+
+        h1 {
+            color: #000;
+            text-align: center;
+            font-family: Gilroy;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        form {
+            margin-top: 22px;
+
+            input {
+                width: 321px;
+                height: 42px;
+
+                border-radius: 10px;
+                border: 2px solid #007FFF;
+
+                padding-left: 20px;
+
+                color: #000;
+                font-family: Gilroy;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+
+            button {
+                width: 155px;
+                height: 42px;
+
+                border-radius: 10px;
+                background: #0071E3;
+                border: none;
+
+                color: #FFF;
+                text-align: center;
+                font-family: Gilroy;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+.todos {
+    margin-top: 42px;
+
+    hr {
+        width: 71%;
+        background: rgba(0, 0, 0, 0.25);
+    }
+
+    .wrap {
+        margin-top: 18px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .box {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            align-items: center;
+
+            gap: 25px;
+
+            .item {
+                width: 282px;
+                height: 90px;
+
+                border-radius: 10px;
+                border: 1px solid #007FFF;
+                background: #F0F0F0;
+
+                .wrapper {
+                    padding: 20px;
+
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        justify-content: center;
+                        gap: 15px;
+
+
+                        .title {
+                            color: #000;
+                            font-family: Gilroy;
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: normal;
+
+                            user-select: none;
+                        }
+
+                        .time {
+                            color: rgba(0, 0, 0, 0.55);
+                            font-family: Gilroy;
+                            font-size: 14px;
+                            font-style: italic;
+                            font-weight: 500;
+                            line-height: normal;
+
+                            user-select: none;
+                        }
+                    }
+
+                    button {
+                        background: none;
+                        border: none;
+
+                        user-select: none;
+                    }
+
+                }
+
+                &.delete {
+                    animation: unfade .5s ease;
+                    width: 0;
+                    overflow: hidden;
+
+                    @keyframes unfade {
+                        from {
+                            width: 282px;
+                        }
+
+                        to {
+                            width: 0px;                            
+                        }
+                    }
+                }
+
+                animation: fade .5s ease;
+            }
+        }
+    }
+}
+
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    background: rgb(160, 159, 159);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper-modal {
+
+        background: white;
+
+        width: 50%;
+        height: 70%;
+
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        padding: 100px 0;
+
+        h1 {
+            margin-bottom: auto;
+            font-family: Gilroy;
+        }
+
+
+        .preview {
+
+            margin: auto 0;
+
+            .box {
+                .item {
+                    width: 282px;
+                    height: 90px;
+
+                    border-radius: 10px;
+                    border: 1px solid #007FFF;
+                    background: #F0F0F0;
+
+                    .wrapper {
+                        padding: 20px;
+
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: start;
+
+                        .info {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: start;
+                            justify-content: center;
+                            gap: 15px;
+
+
+                            .title {
+                                color: #000;
+                                font-family: Gilroy;
+                                font-size: 18px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;
+
+                                user-select: none;
+                                cursor: text;
+                            }
+
+                            .time {
+                                color: rgba(0, 0, 0, 0.55);
+                                font-family: Gilroy;
+                                font-size: 14px;
+                                font-style: italic;
+                                font-weight: 500;
+                                line-height: normal;
+
+                                user-select: none;
+                            }
+                        }
+
+                        button {
+                            background: none;
+                            border: none;
+
+                            user-select: none;
+                            cursor: pointer;
+                        }
+
+                    }
+
+                    &.done {
+                        border: 1px solid green;
+                    }
+
+                    animation: fade .5s ease;
+                }
+            }
+        }
+
+        form {
+            margin-top: 22px;
+
+            display: flex;
+
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            gap: 25px;
+
+            input {
+                width: 321px;
+                height: 42px;
+
+                border-radius: 10px;
+                border: 2px solid #007FFF;
+
+                padding-left: 20px;
+
+                color: #000;
+                font-family: Gilroy;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+
+                &.error {
+                    border: 2px solid red;
+                }
+            }
+
+            button {
+                width: 321px;
+                height: 42px;
+
+                border-radius: 10px;
+                background: #0071E3;
+                border: none;
+
+                color: #FFF;
+                text-align: center;
+                font-family: Gilroy;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+
+                cursor: pointer;
+            }
+        }
+    }
+
+    opacity: 0;
+    display: none;
+
+
+    &.active {
+        display: flex;
+        opacity: 1;
+
+        animation: fade .5s ease;
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.active-remove {
+        animation: rise .5s ease-out;
+
+        @keyframes rise {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+    }
+}
